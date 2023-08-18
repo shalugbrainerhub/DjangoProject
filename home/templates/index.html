@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid black;
+        }
+      
+        th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+        }
+      
+        th {
+          background-color: #f2f2f2;
+        }
+      </style>
+</head>
+<body>
+    <h1>Hey, I am Django.</h1>
+
+    {{data}}
+
+
+    <table>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Can Vote</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{d.name}}</td>
+          <td>{{d.age}}</td>
+          <td>
+            {% if d.age >= 18 %}
+            👍
+            {% else %}
+            👎
+            {% endif %}
+          </td>
+        </tr>
+       {% endfor %}
+      </table>
+      
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, obcaecati. Iure voluptatum cum dolores, 
+        soluta ducimus, architecto blanditiis voluptates minima tempore labore quibusdam culpa, 
+        ipsam laudantium repellendus doloribus? Consequuntur, voluptatem?</p>
+    
+</body>
+</html>
